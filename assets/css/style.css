@@ -1,0 +1,22 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+}
+
+#todo-error {
+  color: red;
+  font-size: 2em;
+}
+
+.text-shadow {
+  text-shadow: 1px 1px 2px #464646;
+}
+
+.action {
+  cursor: pointer;
+}

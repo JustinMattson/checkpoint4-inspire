@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/e48b493767.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Inspire</title>
+  </head>
+
+  <body id="bg-image">
+    <div id="weather">
+      Your Weather Template
+    </div>
+
+    <div id="quote">
+      The Quote
+    </div>
+
+    <div>
+      A Todo List
+      <div id="todo-error"></div>
+
+      <form onsubmit="app.todoController.addTodo(event)">
+        <div class="form-group mx-3">
+          <div class="input-group mb-3">
+            <input
+              id="newTodo"
+              type="text"
+              class="form-control"
+              aria-label="Text input with checkbox"
+              placeholder="Add new item..."
+            />
+            <div class="input-group-append">
+              <button
+                class="btn btn-outline-secondary"
+                type="submit"
+                id="addTodo"
+              >
+                Add Todo
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <div id="todos"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+    <script type="module" src="app/main.js"></script>
+  </body>
+</html>
+<html></html>
