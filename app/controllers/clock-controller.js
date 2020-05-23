@@ -16,7 +16,7 @@ function _drawGreeting() {
 
 export default class Clock {
   constructor() {
-    console.log("hi from clock controller");
+    //console.log("hi from clock controller");
     store.subscribe("clock", _drawClock);
     store.subscribe("time", _drawClock);
     store.subscribe("greeting", _drawGreeting);

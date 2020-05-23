@@ -16,7 +16,7 @@ export default class Weather {
     this.sunrise = data.sys;
     this.sunset = data.sys;
   }
-
+  // TODO set up a toggle for K F C!
   get Template() {
     return /*html*/ `
      <div>
