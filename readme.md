@@ -108,15 +108,17 @@ The todos portion of this project is the largest and will probably take the most
 
 ### Visualization
 
-- The data from the services are each rendered:
-  - [ ] Quote: Quote always displayed and Author reveals on hover
-  - [ ] Image: The image is required, however the additional data is optional
-  - [ ] Weather: The temp is displayed in Fahrenheit/Celsius with a click toggling between
-  - [ ] Todo: Todo's are shown on the page including a count of remaining tasks to complete
+The data from the services are each rendered:
+
+- [ ] Quote: Quote always displayed and Author reveals on hover
+- [ ] Image: The image is required, however the additional data is optional
+- [ ] Weather: The temp is displayed in Fahrenheit/Celsius with a click toggling between
+- [ ] Todo: Todo's are shown on the page including a count of remaining tasks to complete
 - [ ] The image should be on large display with at least one other element positioned over the top of the image.
 - [+] When adding a Todo the page does not reload
-- [ ] Completed Todo's checkbox remains checked on reload ([hint: checked attribute](https://www.w3schools.com/tags/att_input_checked.asp))
-- [ ] A clock shows the accurate time in the middle of the screen and updates appropriately
+- [+] Completed Todo's checkbox remains checked on reload ([hint: checked attribute](https://www.w3schools.com/tags/att_input_checked.asp))
+  <!-- NOTE I did not use checkboxes, but they remain on reload -->
+- [+] A clock shows the accurate time in the middle of the screen and updates appropriately
 
 ### Functionality
 

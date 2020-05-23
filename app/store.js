@@ -4,14 +4,18 @@ import Weather from "./models/weather.js";
 let _state = {
   /**@type {Weather} */
   weather: new Weather({ name: "loading", main: { temp: 0.0 } }), //temporary fake data
-  /**@type {Todo[]}*/
+  /** @type {Todo[]}*/
   todos: [], //TODO change 'any' to your todo model
-  /**@type {} */
+  /** @type {Boolean} */
   clock: true, //millitary time
+  /** @type {integer}*/
   time: null,
   date: null,
+  /** @type {integer}*/
   sunrise: 0,
+  /** @type {integer}*/
   sunset: 0,
+  /** @type {String}*/
   greeting: "",
 };
 

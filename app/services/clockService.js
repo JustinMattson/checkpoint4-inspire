@@ -15,8 +15,8 @@ function getTime() {
       hours = 12;
     }
     // NOTE DONE verify minutes have two digits : minutes < 10
-    // TODO if getTime is called at load and every 5 seconds thereafter
-    // why does it take 5 seconds to render the clock on the DOM?
+    // TODO if getTime is called at load and every .5 seconds thereafter
+    // why does it take .5 seconds to render the clock on the DOM?
     store.commit("time", hours + ":" + minutes);
     return hours + ":" + minutes;
   } else {
@@ -28,14 +28,17 @@ function getTime() {
 function getGreeting() {
   let greeting = "";
   let d = new Date();
-  let now = d.getTime();
+  let now = 0.001 * d.getTime();
+  //console.log(now) + " = now";
   let sunrise = store.State.sunrise;
+  //console.log(sunrise + " = sunrise");
   let sunset = store.State.sunset;
+  //console.log(sunset + " = sunset");
   if (now < sunrise || now > sunset) {
     greeting = "Good Night";
   } else if (d.getHours() < 12) {
     greeting = "Good Morning";
-  } else if (d.getHours() <= 17 && d.getMinutes() < 1) {
+  } else if (d.getHours() < 17 || (d.getHours() == 17 && d.getMinutes() <= 1)) {
     greeting = "Good Afternoon";
   } else {
     greeting = "Good Evening";
