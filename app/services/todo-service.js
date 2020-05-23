@@ -9,15 +9,17 @@ const todoApi = axios.create({
 
 class TodoService {
   async getTodos() {
-    console.log("Getting the Todo List");
-    let res = await todoApi.get();
-    store.commit(
-      "todos",
-      res.data.data.map((todo) => new Todo(todo))
-    );
-    console.log(store.State.todos);
-
-    //TODO Handle this response from the server
+    try {
+      let res = await todoApi.get();
+      store.commit(
+        "todos",
+        res.data.data.map((todo) => new Todo(todo))
+      );
+    } catch (e) {
+      console.error(e);
+    }
+    //NOTE DONE Handle this response from the server
+    // added try/catch if that is what the TO-DO was about?
   }
 
   addTodoAsync(todoObj) {
@@ -32,12 +34,23 @@ class TodoService {
   }
 
   toggleTodoStatusAsync(todoId) {
-    let todo = store.State.todos.find((todo) => todo._id == todoId);
-    //TODO Make sure that you found a todo,
-    //		and if you did find one
-    //		change its completed status to whatever it is not (ex: false => true or true => false)
+    let todoObj = store.State.todos.find((todo) => todo.id == todoId);
+    //console.log(todoObj.completed + "before ternary");
+    //NOTE DONE Make sure that you found a todo,
+    if (todoObj) {
+      //		and if you did find one
+      //		change its completed status to whatever it is not (ex: false => true or true => false)
+      todoObj.completed
+        ? (todoObj.completed = false)
+        : (todoObj.completed = true);
+      //console.log(todoObj.completed + "after ternary");
 
-    todoApi.put(todoId, todo);
+      todoApi.put(todoId, { completed: todoObj.completed }).then((res) => {
+        this.getTodos();
+      });
+    }
+
+    //todoApi.put(todoId, todo);
     //TODO do you care about this data? or should you go get something else?
   }
 

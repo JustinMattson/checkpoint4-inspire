@@ -26,8 +26,6 @@ export default class TodoController {
       description: form.newTodo.value,
       completed: false,
     };
-    console.log(todoObj);
-    console.log("^todoObj from controller");
     TodoService.addTodoAsync(todoObj);
     form.reset();
   }

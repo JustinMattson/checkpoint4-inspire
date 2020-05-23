@@ -16,10 +16,16 @@
     <title>Inspire</title>
   </head>
 
-  <body id="bg-image">
-    <div id="weather">
+  <body
+    id="bg-image"
+    style="background-color: #f7ecd5;"
+    class="container-fluid"
+  >
+    <div id="weather" class="text-secondary">
       Your Weather Template
     </div>
+    <div id="time"></div>
+    <div id="greeting" class="text-secondary"></div>
 
     <div id="quote">
       The Quote
@@ -38,6 +44,7 @@
               class="form-control"
               aria-label="Text input with checkbox"
               placeholder="Add new item..."
+              required
             />
             <div class="input-group-append">
               <button

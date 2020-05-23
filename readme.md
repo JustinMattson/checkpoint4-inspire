@@ -122,7 +122,7 @@ The todos portion of this project is the largest and will probably take the most
 
 - [+] Todo's can be added to a list (POST)
 - [+] Todo's can be removed (DELETE)
-- [ ] Todo's can be marked complete (PUT)
+- [+] Todo's can be marked complete (PUT)
 - [+] The data in the Todos persists on reload
 
 ### EXTENSION IDEAS

@@ -6,6 +6,13 @@ let _state = {
   weather: new Weather({ name: "loading", main: { temp: 0.0 } }), //temporary fake data
   /**@type {Todo[]}*/
   todos: [], //TODO change 'any' to your todo model
+  /**@type {} */
+  clock: true, //millitary time
+  time: null,
+  date: null,
+  sunrise: 0,
+  sunset: 0,
+  greeting: "",
 };
 
 /** Collection of listeners to be called based on keyed state changes
@@ -14,6 +21,12 @@ let _state = {
 let _listeners = {
   weather: [],
   todos: [],
+  clock: [],
+  time: [],
+  date: [],
+  sunrise: [],
+  sunset: [],
+  greeting: [],
 };
 
 /**

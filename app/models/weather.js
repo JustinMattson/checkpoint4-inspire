@@ -8,14 +8,19 @@ export default class Weather {
     //      check out the other data that comes back and see if there is anything you want to try
 
     this.city = data.name;
+    this.sunrise = data.sys;
     this.kelvin = data.main.temp;
     this.celsius = (data.main.temp - 273.15).toFixed(1);
     this.fahrenheit = ((data.main.temp - 273.15) * (9 / 5) + 32).toFixed(0);
+    //this.country = data.sys.country;
+    this.sunrise = data.sys;
+    this.sunset = data.sys;
   }
 
   get Template() {
     return /*html*/ `
      <div>
+      <span>${this.city}</span>
       <span>${this.kelvin}°K | </span>
       <span>${this.celsius}°C | </span>
       <span>${this.fahrenheit}°F</span>
