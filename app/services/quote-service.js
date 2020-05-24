@@ -15,7 +15,7 @@ class QuoteService {
     console.log("calling quotemaster general");
     let res = await _quoteApi.get();
     console.log(res);
-    store.commit("quote", res);
+    //store.commit("quote", res);
   }
 }
 

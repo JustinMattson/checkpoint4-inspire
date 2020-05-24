@@ -3,6 +3,7 @@ import weatherService from "./weather-service.js";
 
 setInterval(getGreeting, 500);
 setInterval(getTime, 500);
+setInterval(getDate, 500);
 
 function getTime() {
   let time = new Date();
@@ -25,6 +26,15 @@ function getTime() {
     store.commit("time", hours + ":" + minutes);
     return hours + ":" + minutes;
   }
+}
+
+function getDate() {
+  let d = new Date();
+  let day = d.getDate();
+  let month = 1 + d.getMonth();
+  let year = d.getFullYear();
+  let today = year + "." + month + "." + day;
+  store.commit("date", today);
 }
 
 function getGreeting() {
@@ -56,6 +66,7 @@ function getGreeting() {
 
 class ClockService {
   constructor() {
+    getDate();
     getTime();
     getGreeting();
     //console.log("called getGreeting");

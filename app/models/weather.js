@@ -1,30 +1,43 @@
 export default class Weather {
   constructor(data) {
-    console.log("[RAW WEATHER API DATA]", data);
+    //console.log("[RAW WEATHER API DATA]", data);
     //NOTE NOPE Have you ever wanted to know the temperature measured in kelvin?
     //      That is what this data returns! data.main.temp is the temperature in Kelvin
 
     //NOTE DONE You should probably convert the temperature data to either F or C
     //      check out the other data that comes back and see if there is anything you want to try
 
-    this.city = data.name;
-    this.sunrise = data.sys;
-    this.kelvin = data.main.temp;
-    this.celsius = (data.main.temp - 273.15).toFixed(1);
-    this.fahrenheit = ((data.main.temp - 273.15) * (9 / 5) + 32).toFixed(0);
-    //this.country = data.sys.country;
-    this.sunrise = data.sys;
-    this.sunset = data.sys;
+    // NOTE I struggled to get this information to return from the res.data that got shoved into the store, so I pulled out what I wanted, then shoved only the data I wanted into the store.
+
+    this.city = data.city;
+    this.temperature = data.temperature;
+    this.celsius = data.temperature;
+    this.fahrenheit = (data.temperature * (9 / 5) + 32).toFixed(0);
+    this.currentCondition = data.currentCondition;
+    this.sunrise = data.sunrise;
+    this.sunset = data.sunset;
+    this.unit = true;
   }
   // TODO set up a toggle for K F C!
   get Template() {
     return /*html*/ `
-     <div>
-      <span>${this.city}</span>
-      <span>${this.kelvin}°K | </span>
-      <span>${this.celsius}°C | </span>
-      <span>${this.fahrenheit}°F</span>
+     <div class="action" onclick="app.weatherController.toggleTempUnit()">
+     <span>${this.city}</span>
+     ${this.SubTemplate}      
+    <span>(${this.currentCondition})</span>
     </div>
+    `;
+  }
+
+  get SubTemplate() {
+    if (!this.unit) {
+      return /*html*/ `
+
+      <span>${this.fahrenheit}°F</span>
+  `;
+    }
+    return /*html*/ `
+    <span>${this.celsius}°C</span>
     `;
   }
 }

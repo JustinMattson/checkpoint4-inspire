@@ -14,11 +14,16 @@ function _drawGreeting() {
   document.getElementById("greeting").innerText = greeting;
 }
 
+function _drawDate() {
+  let date = store.State.date;
+  document.getElementById("date").innerText = date;
+}
+
 export default class Clock {
   constructor() {
-    //console.log("hi from clock controller");
     store.subscribe("clock", _drawClock);
     store.subscribe("time", _drawClock);
+    store.subscribe("date", _drawDate);
     store.subscribe("greeting", _drawGreeting);
   }
 
