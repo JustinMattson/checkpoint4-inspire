@@ -1,6 +1,8 @@
 import QuoteService from "../services/quote-service.js";
 import store from "../store.js";
 
+console.log("from q-controller");
+
 function drawQuote() {
   console.log("drawQuote");
 }

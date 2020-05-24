@@ -1,5 +1,7 @@
 import Quote from "../models/quote.js";
-import store from "../store";
+//import store from "../store";
+
+console.log("from q-service");
 
 // @ts-ignore
 const _quoteApi = axios.create({
@@ -13,7 +15,7 @@ class QuoteService {
     console.log("calling quotemaster general");
     let res = await _quoteApi.get();
     console.log(res);
-    //store.commit("quote", quote)
+    store.commit("quote", res);
   }
 }
 

@@ -2,6 +2,8 @@ import Todo from "./models/todo.js";
 import Weather from "./models/weather.js";
 import Quote from "./models/quote.js";
 
+console.log("from store");
+
 let _state = {
   /**@type {Weather} */
   weather: new Weather({ name: "loading", main: { temp: 0.0 } }), //temporary fake data
