@@ -1,4 +1,5 @@
 import store from "../store.js";
+import weatherService from "./weather-service.js";
 
 setInterval(getGreeting, 500);
 setInterval(getTime, 500);
@@ -20,6 +21,7 @@ function getTime() {
     store.commit("time", hours + ":" + minutes);
     return hours + ":" + minutes;
   } else {
+    let hours = ("0" + time.getHours()).slice(-2);
     store.commit("time", hours + ":" + minutes);
     return hours + ":" + minutes;
   }
@@ -36,6 +38,7 @@ function getGreeting() {
   //console.log(sunset + " = sunset");
   if (now < sunrise || now > sunset) {
     greeting = "Good Night";
+    weatherService.getWeather();
   } else if (d.getHours() < 12) {
     greeting = "Good Morning";
   } else if (d.getHours() < 17 || (d.getHours() == 17 && d.getMinutes() <= 1)) {

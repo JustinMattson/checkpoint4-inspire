@@ -1,5 +1,6 @@
 import Todo from "./models/todo.js";
 import Weather from "./models/weather.js";
+import Quote from "./models/quote.js";
 
 let _state = {
   /**@type {Weather} */
@@ -17,6 +18,8 @@ let _state = {
   sunset: 0,
   /** @type {String}*/
   greeting: "",
+  /** @type {Quote[]} */
+  quote: null,
 };
 
 /** Collection of listeners to be called based on keyed state changes
@@ -31,6 +34,7 @@ let _listeners = {
   sunrise: [],
   sunset: [],
   greeting: [],
+  quote: [],
 };
 
 /**

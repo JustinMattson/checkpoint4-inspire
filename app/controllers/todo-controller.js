@@ -5,6 +5,7 @@ import store from "../store.js";
 function _drawTodos() {
   let todos = store.State.todos;
   console.log(store.State);
+  console.log("^store.State from todoController");
 
   let template = "";
   todos.forEach((todo) => (template += todo.Template));
