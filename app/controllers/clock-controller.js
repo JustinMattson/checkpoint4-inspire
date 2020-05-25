@@ -1,11 +1,11 @@
 import store from "../store.js";
-import clockService from "../services/clockService.js";
+import clockService from "../services/clock-Service.js";
 
 function _drawClock() {
   let template = "";
   let time = store.State.time;
   template += /*html*/ `
-    <h1 class="action" onclick="app.clockController.toggleMilitaryTime()">${time}</h1>
+    <p class="action" onclick="app.clockController.toggleMilitaryTime()">${time}</p>
     `;
   document.getElementById("time").innerHTML = template;
 }
@@ -15,8 +15,13 @@ function _drawGreeting() {
 }
 
 function _drawDate() {
+  let template = "";
   let date = store.State.date;
-  document.getElementById("date").innerText = date;
+  template += /*html*/ `
+    <h3 class="action" onclick="app.imageController.getImage()">${date}</h3>
+  `;
+
+  document.getElementById("date").innerHTML = template;
 }
 
 export default class Clock {

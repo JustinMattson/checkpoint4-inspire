@@ -16,54 +16,76 @@
     <title>Inspire</title>
   </head>
 
-  <body
-    id="bg-image"
-    style="background-color: #f7ecd5;"
-    class="container-fluid"
-  >
-    <div id="date" class="text-secondary">
-      Date
-    </div>
-    <div id="weather" class="text-secondary">
-      Your Weather Template
-    </div>
-    <div id="time"></div>
-    <div id="greeting" class="text-secondary"></div>
+  <!--
+    style="
+      background-image: url('https://cdn.wallpaperhub.app/cloudcache/1/b/5/8/e/f/1b58ef6e3d36a42e01992accf5c52d6eea244353.jpg');
+    "
+    -->
+  <body id="bg-image" class="bg container-fluid">
+    <header>
+      <div class="row d-flex justify-content-center px-0">
+        <div class="col col-md-6 text-light text-left px-0">
+          <div id="date">Date Goes Here</div>
+        </div>
+        <div class="col col-md-6 order-md-2 text-light text-right">
+          <div id="weather">Weather Goes Here</div>
+        </div>
+      </div>
+    </header>
 
-    <div id="quote">
-      The Quote
-    </div>
+    <main>
+      <div class="row d-flex text-center text-light" style="height: 50vh;">
+        <div class="col-12 align-self-end" style="font-size: 94pt;">
+          <div id="time">Clock Goes Here</div>
+        </div>
+        <div class="col-12 order-2 text-light" style="font-size: 19pt;">
+          <div id="greeting">Greeting Goes Here</div>
+        </div>
+      </div>
+    </main>
 
-    <div>
-      A Todo List
-      <div id="todo-error"></div>
-
-      <form onsubmit="app.todoController.addTodo(event)">
-        <div class="form-group mx-3">
-          <div class="input-group mb-3">
-            <input
-              id="newTodo"
-              type="text"
-              class="form-control"
-              aria-label="Text input with checkbox"
-              placeholder="Add new item..."
-              required
-            />
-            <div class="input-group-append">
-              <button
-                class="btn btn-outline-secondary"
-                type="submit"
-                id="addTodo"
-              >
-                Add Todo
-              </button>
-            </div>
+    <footer>
+      <div class="row text-light">
+        <div class="col-12 order-2 col-md-6 order-md-1 align-self-end">
+          <div id="quote">
+            The Quote Goes Here
           </div>
         </div>
-      </form>
 
-      <div id="todos"></div>
-    </div>
+        <div class="col-12 order-1 col-md-6 order-md-2 mt-3">
+          <div>
+            A Todo List
+            <div id="todo-error"></div>
+
+            <form onsubmit="app.todoController.addTodo(event)">
+              <div class="form-group mx-3">
+                <div class="input-group mb-3">
+                  <input
+                    id="newTodo"
+                    type="text"
+                    class="form-control"
+                    aria-label="Text input with checkbox"
+                    placeholder="Add new item..."
+                    required
+                  />
+                  <div class="input-group-append">
+                    <button
+                      class="btn btn-outline-secondary"
+                      type="submit"
+                      id="addTodo"
+                    >
+                      Add Todo
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+
+            <div id="todos"></div>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
     <script type="module" src="app/main.js"></script>

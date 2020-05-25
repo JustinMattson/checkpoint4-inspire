@@ -1,14 +1,15 @@
 import store from "../store.js";
 import weatherService from "./weather-service.js";
 
-setInterval(getGreeting, 500);
-setInterval(getTime, 500);
-setInterval(getDate, 500);
+setInterval(getGreeting, 1000);
+setInterval(getTime, 1000);
+setInterval(getDate, 1000);
 
 function getTime() {
   let time = new Date();
   let hours = time.getHours();
   let minutes = ("0" + time.getMinutes()).slice(-2);
+  let ampm = time.getHours() > 11 ? " PM" : " AM";
   if (store.State.clock) {
     if (hours > 12) {
       hours -= 12;
@@ -19,7 +20,7 @@ function getTime() {
     // NOTE DONE verify minutes have two digits : minutes < 10
     // TODO if getTime is called at load and every .5 seconds thereafter
     // why does it take .5 seconds to render the clock on the DOM?
-    store.commit("time", hours + ":" + minutes);
+    store.commit("time", hours + ":" + minutes + ampm);
     return hours + ":" + minutes;
   } else {
     let hours = ("0" + time.getHours()).slice(-2);
@@ -30,8 +31,8 @@ function getTime() {
 
 function getDate() {
   let d = new Date();
-  let day = d.getDate();
-  let month = 1 + d.getMonth();
+  let day = ("0" + d.getDate()).slice(-2);
+  let month = ("0" + (1 + d.getMonth())).slice(-2);
   let year = d.getFullYear();
   let today = year + "." + month + "." + day;
   store.commit("date", today);
@@ -47,14 +48,14 @@ function getGreeting() {
   let sunset = store.State.sunset;
   //console.log(sunset + " = sunset");
   if (now < sunrise || now > sunset) {
-    greeting = "Good Night";
+    greeting = "...Good Night...";
     weatherService.getWeather();
   } else if (d.getHours() < 12) {
-    greeting = "Good Morning";
+    greeting = "Good Morning!";
   } else if (d.getHours() < 17 || (d.getHours() == 17 && d.getMinutes() <= 1)) {
-    greeting = "Good Afternoon";
+    greeting = "Good Afternoon!";
   } else {
-    greeting = "Good Evening";
+    greeting = "- Good Evening -";
   }
   store.commit("greeting", greeting);
 }

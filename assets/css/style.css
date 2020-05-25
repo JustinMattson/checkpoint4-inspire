@@ -13,6 +13,13 @@ main {
   font-size: 2em;
 }
 
+.bg {
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .text-shadow {
   text-shadow: 1px 1px 2px #464646;
 }
@@ -22,6 +29,22 @@ main {
 }
 
 .text-light {
-  text-shadow: 1px 1px black;
+  color: whitesmoke;
+  text-shadow: 2px 2px black;
   font-weight: bold;
+}
+
+.bottom {
+  vertical-align: bottom;
+}
+
+.extra {
+  display: none;
+  transition: 2s;
+  transition-timing-function: ease-in-out;
+}
+span:hover .extra {
+  display: inline-block;
+  transition: 10s;
+  transition-timing-function: ease-in-out;
 }

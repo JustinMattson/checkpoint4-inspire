@@ -19,7 +19,9 @@ let _state = {
   /** @type {String}*/
   greeting: "",
   /** @type {Quote[]} */
-  quote: null,
+  quote: [],
+  /** @type {} */
+  image: null,
 };
 
 /** Collection of listeners to be called based on keyed state changes
@@ -35,6 +37,7 @@ let _listeners = {
   sunset: [],
   greeting: [],
   quote: [],
+  image: [],
 };
 
 /**

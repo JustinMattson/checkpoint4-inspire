@@ -16,15 +16,15 @@ export default class Weather {
     this.currentCondition = data.currentCondition;
     this.sunrise = data.sunrise;
     this.sunset = data.sunset;
-    this.unit = true;
+    this.unit = false;
   }
   // TODO set up a toggle for K F C!
   get Template() {
     return /*html*/ `
      <div class="action" onclick="app.weatherController.toggleTempUnit()">
-     <span>${this.city}</span>
      ${this.SubTemplate}      
-    <span>(${this.currentCondition})</span>
+     <span>(${this.currentCondition})</span>
+     <div>${this.city}</div>
     </div>
     `;
   }
