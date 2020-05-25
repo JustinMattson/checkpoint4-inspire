@@ -4,11 +4,11 @@ import store from "../store.js";
 function _drawImage() {
   try {
     let image = store.State.image;
-    console.log(image.imgUrl);
+    //console.log(image.imgUrl);
     let imgUrl = image.imgUrl;
     document.getElementById("bg-image").style.backgroundImage = `${imgUrl}`;
   } catch (error) {
-    console.log("error caught by image controller");
+    //console.log("error caught by image controller");
     let imgUrl = "url(./assets/img/IMAG1868~2.jpg)";
     document.getElementById("bg-image").style.backgroundImage = `${imgUrl}`;
   }

@@ -8,7 +8,7 @@ const weatherApi = axios.create({
 });
 
 setInterval(async (getWeather) => {
-  console.log("checking weather");
+  // console.log("checking weather");
 }, 10000);
 
 class WeatherService {

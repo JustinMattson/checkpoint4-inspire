@@ -8,7 +8,7 @@ function _drawTodos() {
   let visible = store.State.visible;
   visible ? alias.classList.remove("hidden") : alias.classList.add("hidden");
   console.log(store.State);
-  console.log("^store.State from todoController");
+  console.log("^store.State");
 
   let template = "";
   todos.forEach((todo) => (template += todo.Template));
