@@ -17,9 +17,11 @@ class ImageService {
       let copyright = res.data.copyright;
       let site = res.data.site;
       if (imgUrl.slice(-3) != "jpg" || imgUrl == null) {
-        console.log(imgUrl);
-        console.log("attempting a better image...");
-        setTimeout(this.getImage, 3000);
+        console.log("not jpg or isNull");
+        id = 0;
+        imgUrl = "./assets/img/IMAG1868~2.jpg";
+        copyright = "Justin Mattson";
+        site = "JM-original";
       }
       let imgObj = {
         id: id,

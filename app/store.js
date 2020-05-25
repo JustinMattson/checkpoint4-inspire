@@ -10,11 +10,12 @@ let _state = {
   /** @type {Boolean} */
   clock: true, //millitary time
   visible: false, // user defined todo list
-  /** @type {integer}*/
-  time: null,
+  /** @type {object*/
+  time: {},
   date: null,
   /** @type {String}*/
   greeting: "",
+  userData: "",
   /** @type {Quote[]} */
   quote: [],
   /** @type {} */
@@ -32,6 +33,7 @@ let _listeners = {
   time: [],
   date: [],
   greeting: [],
+  userData: [],
   quote: [],
   image: [],
 };

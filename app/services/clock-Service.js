@@ -20,11 +20,11 @@ function getTime() {
     // NOTE DONE verify minutes have two digits : minutes < 10
     // TODO if getTime is called at load and every .5 seconds thereafter
     // why does it take .5 seconds to render the clock on the DOM?
-    store.commit("time", hours + ":" + minutes + ampm);
+    store.commit("time", { hours: hours, minutes: minutes, ampm: ampm });
     return hours + ":" + minutes;
   } else {
     let hours = ("0" + time.getHours()).slice(-2);
-    store.commit("time", hours + ":" + minutes);
+    store.commit("time", { hours: hours, minutes: minutes, ampm: "" });
     return hours + ":" + minutes;
   }
 }
@@ -35,6 +35,9 @@ function getDate() {
   let month = ("0" + (1 + d.getMonth())).slice(-2);
   let year = d.getFullYear();
   let today = year + "." + month + "." + day;
+  if (d.getHours() == 23 && d.getMinutes() == 59) {
+    setTimeout(weatherService.getWeather, 61000);
+  }
   store.commit("date", today);
 }
 
@@ -56,6 +59,7 @@ function getGreeting() {
   } else {
     greeting = "- Good Evening -";
   }
+  //console.log(greeting);
   store.commit("greeting", greeting);
 }
 

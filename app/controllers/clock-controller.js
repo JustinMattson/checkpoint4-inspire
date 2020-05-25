@@ -3,11 +3,14 @@ import clockService from "../services/clock-Service.js";
 
 function _drawClock() {
   let template = "";
-  let time = store.State.time;
+  let timeObj = store.State.time;
+  //console.log(timeObj);
   template += /*html*/ `
-    <p class="action" onclick="app.clockController.toggleMilitaryTime()">${time}</p>
-    `;
-  document.getElementById("time").innerHTML = template;
+  <p class="action" onclick="app.clockController.toggleMilitaryTime()">
+      ${timeObj.hours}:${timeObj.minutes}<span style="font-size:12pt;">${timeObj.ampm}</span>
+  </p>
+  `;
+  document.getElementById("clock").innerHTML = template;
 }
 function _drawGreeting() {
   let greeting = store.State.greeting;
@@ -29,7 +32,7 @@ export default class Clock {
     store.subscribe("clock", _drawClock);
     store.subscribe("time", _drawClock);
     store.subscribe("date", _drawDate);
-    store.subscribe("date", _drawGreeting);
+    store.subscribe("greeting", _drawGreeting);
   }
 
   toggleMilitaryTime() {

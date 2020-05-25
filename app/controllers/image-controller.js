@@ -2,9 +2,16 @@ import ImageService from "../services/image-service.js";
 import store from "../store.js";
 
 function _drawImage() {
-  let image = store.State.image;
-  let imgUrl = image.imgUrl;
-  document.getElementById("bg-image").style.backgroundImage = `${imgUrl}`;
+  try {
+    let image = store.State.image;
+    console.log(image.imgUrl);
+    let imgUrl = image.imgUrl;
+    document.getElementById("bg-image").style.backgroundImage = `${imgUrl}`;
+  } catch (error) {
+    console.log("error caught by image controller");
+    let imgUrl = "url(./assets/img/IMAG1868~2.jpg)";
+    document.getElementById("bg-image").style.backgroundImage = `${imgUrl}`;
+  }
 }
 
 //NOTE DONE Create methods for constructor, and rendering the image to the page

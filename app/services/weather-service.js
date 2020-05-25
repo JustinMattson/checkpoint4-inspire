@@ -7,6 +7,10 @@ const weatherApi = axios.create({
   timeout: 3000,
 });
 
+setInterval(async (getWeather) => {
+  console.log("checking weather");
+}, 10000);
+
 class WeatherService {
   toggleTempUnit() {
     let tempObj = store.State.weather;
