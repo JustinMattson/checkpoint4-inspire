@@ -13,6 +13,7 @@ export default class ImageController {
   constructor() {
     ImageService.getImage();
     store.subscribe("image", _drawImage);
+    store.subscribe("greeting", _drawImage);
   }
   getImage() {
     ImageService.getImage();
