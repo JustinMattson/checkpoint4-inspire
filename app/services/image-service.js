@@ -7,24 +7,33 @@ const imgApi = axios.create({
   timeout: 8000,
 });
 
-//TODO create methods to retrieve data trigger the update window when it is complete
+//NOTE DONE create methods to retrieve data trigger the update window when it is complete
 class ImageService {
   async getImage() {
-    let res = await imgApi.get();
-    let id = res.data.id;
-    let imgUrl = res.data.url;
-    let copyright = res.data.copyright;
-    let imgObj = {
-      id: id,
-      imgUrl: "url('" + imgUrl + "')",
-      copyright: copyright,
-    };
-    store.commit("image", new Image(imgObj));
-    console.log(res);
+    try {
+      let res = await imgApi.get();
+      let id = res.data.id;
+      let imgUrl = res.data.large_url;
+      let copyright = res.data.copyright;
+      let site = res.data.site;
+      if (imgUrl.slice(-3) != "jpg" || imgUrl == null) {
+        console.log(imgUrl);
+        console.log("attempting a better image...");
+        setTimeout(this.getImage, 3000);
+      }
+      let imgObj = {
+        id: id,
+        imgUrl: "url('" + imgUrl + "')",
+        copyright: copyright,
+        site: site,
+      };
+      store.commit("image", new Image(imgObj));
+      //console.log(res);
+    } catch (e) {
+      console.error(e);
+    }
   }
-  constructor() {
-    console.log("hi from img control");
-  }
+  constructor() {}
 }
 
 const imageService = new ImageService();

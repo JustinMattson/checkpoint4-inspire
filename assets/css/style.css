@@ -6,11 +6,19 @@ body {
 
 main {
   flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #todo-error {
   color: red;
   font-size: 2em;
+}
+
+.list-container {
+  max-height: 30vh;
+  overflow-y: scroll;
 }
 
 .bg {
@@ -29,8 +37,8 @@ main {
 }
 
 .text-light {
-  color: whitesmoke;
-  text-shadow: 2px 2px black;
+  color: rgb(236, 236, 236);
+  text-shadow: 2px 2px rgba(17, 17, 17, 0.37);
   font-weight: bold;
 }
 
@@ -43,8 +51,12 @@ main {
   transition: 2s;
   transition-timing-function: ease-in-out;
 }
-span:hover .extra {
+#quote:hover .extra {
   display: inline-block;
   transition: 10s;
   transition-timing-function: ease-in-out;
+}
+
+.hidden {
+  display: none;
 }

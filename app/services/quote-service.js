@@ -14,6 +14,9 @@ class QuoteService {
     let quoteObj = res.data.quote;
     let quote = quoteObj.body;
     let author = quoteObj.author;
+    if (quote == null || author == null) {
+      this.getQuote();
+    }
     let myQuoteObj = {
       quote: quote,
       author: author,

@@ -29,7 +29,7 @@ export default class Clock {
     store.subscribe("clock", _drawClock);
     store.subscribe("time", _drawClock);
     store.subscribe("date", _drawDate);
-    store.subscribe("greeting", _drawGreeting);
+    store.subscribe("date", _drawGreeting);
   }
 
   toggleMilitaryTime() {

@@ -110,11 +110,11 @@ The todos portion of this project is the largest and will probably take the most
 
 The data from the services are each rendered:
 
-- [ ] Quote: Quote always displayed and Author reveals on hover
-- [ ] Image: The image is required, however the additional data is optional
-- [ ] Weather: The temp is displayed in Fahrenheit/Celsius with a click toggling between
-- [ ] Todo: Todo's are shown on the page including a count of remaining tasks to complete
-- [ ] The image should be on large display with at least one other element positioned over the top of the image.
+- [+] Quote: Quote always displayed and Author reveals on hover
+- [+] Image: The image is required, however the additional data is optional
+- [+] Weather: The temp is displayed in Fahrenheit/Celsius with a click toggling between
+- [+] Todo: Todo's are shown on the page including a count of remaining tasks to complete
+- [+] The image should be on large display with at least one other element positioned over the top of the image.
 - [+] When adding a Todo the page does not reload
 - [+] Completed Todo's checkbox remains checked on reload ([hint: checked attribute](https://www.w3schools.com/tags/att_input_checked.asp))
   <!-- NOTE I did not use checkboxes, but they remain on reload -->
@@ -129,16 +129,17 @@ The data from the services are each rendered:
 
 ### EXTENSION IDEAS
 
-- On hover the quote should show the author of the quote and disappear when not hovered over
-- Allow the user to set their name and have it save to localStorage
-- Change the message from Good Morning to Good Afternoon, Evening as appropriate.
-- Allow the user to toggle the clock from, 12hr to 24hr.
+- [+] On hover the quote should show the author of the quote and disappear when not hovered over
+- [ ] Allow the user to set their name and have it save to localStorage
+- [+] Change the message from Good Morning to Good Afternoon, Evening as appropriate.
+- [+] Allow the user to toggle the clock from, 12hr to 24hr.
 - Include an Icon to show what the weather is sunny/cloudy/rainy
-- Add a button to cycle to next quote/picture
-- Add a settings so user can change to a new "theme" (font, background colors, etc.)
-- `BONUS DIFFICULTY` The todo list shouldn't have to redraw every item just because one of them changed.
-  - If you think through some of the actions being performed you might find a way to optimize the list by only updating the one todo that changes at a time
-  - Every time you update a todo you shouldn't have to re-`get` the entire list you already know what changed about the one todo
+- [+] Add a button to cycle to next quote/picture
+- [ ] Add a settings so user can change to a new "theme" (font, background colors, etc.)
+- [ ] `BONUS DIFFICULTY` The todo list shouldn't have to redraw every item just because one of them changed.
+  - [+] If you think through some of the actions being performed you might find a way to optimize the list by only updating the one todo that changes at a time
+    NOTE: todo-service toggleTodoStatusAsync(todoId) puts just the updated status via .put(todoId, { completed: todoObj.completed })
+  - [ ] Every time you update a todo you shouldn't have to re-`get` the entire list you already know what changed about the one todo
 
 ### Finished?
 

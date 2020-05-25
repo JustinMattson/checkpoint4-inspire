@@ -22,9 +22,9 @@ export default class Weather {
   get Template() {
     return /*html*/ `
      <div class="action" onclick="app.weatherController.toggleTempUnit()">
-     ${this.SubTemplate}      
-     <span>(${this.currentCondition})</span>
      <div>${this.city}</div>
+     <div>(${this.currentCondition})</div>
+     ${this.SubTemplate}      
     </div>
     `;
   }

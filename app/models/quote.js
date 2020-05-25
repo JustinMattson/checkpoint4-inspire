@@ -6,7 +6,8 @@ export default class Quote {
 
   get Template() {
     return /*html*/ `
-    <span class="action" onclick="app.quoteController.getQuote()">${this.quote}<span class="extra"> &nbsp; ~${this.author}</span></span>
+    <span class="extra"> &nbsp; ~${this.author}</span>
+    <p class="action" onclick="app.quoteController.getQuote()">${this.quote}</p>
     `;
   }
 }

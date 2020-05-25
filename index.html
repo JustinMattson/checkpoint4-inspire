@@ -23,66 +23,80 @@
     -->
   <body id="bg-image" class="bg container-fluid">
     <header>
-      <div class="row d-flex justify-content-center px-0">
-        <div class="col col-md-6 text-light text-left px-0">
+      <div class="row d-flex justify-content-center pt-1 px-2">
+        <div class="col col-md-6 text-light text-left m-0 p-0">
           <div id="date">Date Goes Here</div>
         </div>
-        <div class="col col-md-6 order-md-2 text-light text-right">
+        <div class="col col-md-6 order-md-2 text-light text-right m-0 p-0">
           <div id="weather">Weather Goes Here</div>
         </div>
       </div>
     </header>
 
     <main>
-      <div class="row d-flex text-center text-light" style="height: 50vh;">
+      <div class="row d-flex text-center text-light">
         <div class="col-12 align-self-end" style="font-size: 94pt;">
           <div id="time">Clock Goes Here</div>
         </div>
-        <div class="col-12 order-2 text-light" style="font-size: 19pt;">
+        <div
+          class="col-12 align-self-start order-2 text-light"
+          style="font-size: 19pt;"
+        >
           <div id="greeting">Greeting Goes Here</div>
         </div>
       </div>
     </main>
 
     <footer>
-      <div class="row text-light">
-        <div class="col-12 order-2 col-md-6 order-md-1 align-self-end">
-          <div id="quote">
+      <div class="row text-light pb-1 px-2">
+        <div
+          class="col-12 order-2 col-md-6 order-md-2 align-self-end text-right"
+        >
+          <div id="quote" class="m-0">
             The Quote Goes Here
           </div>
         </div>
 
-        <div class="col-12 order-1 col-md-6 order-md-2 mt-3">
-          <div>
-            A Todo List
-            <div id="todo-error"></div>
-
-            <form onsubmit="app.todoController.addTodo(event)">
-              <div class="form-group mx-3">
-                <div class="input-group mb-3">
-                  <input
-                    id="newTodo"
-                    type="text"
-                    class="form-control"
-                    aria-label="Text input with checkbox"
-                    placeholder="Add new item..."
-                    required
-                  />
-                  <div class="input-group-append">
-                    <button
-                      class="btn btn-outline-secondary"
-                      type="submit"
-                      id="addTodo"
-                    >
-                      Add Todo
-                    </button>
-                  </div>
+        <div class="col-12 order-1 col-md-6 order-md-1 align-self-end">
+          <div
+            class="text-left action align-self-end visible"
+            onclick="app.todoController.toggleVisible()"
+          >
+            <span>Todo </span><span id="todoCounts">(5/15)</span>
+          </div>
+          <!-- <div id="todo-error">
+              what is this for?
+            </div> -->
+          <form onsubmit="app.todoController.addTodo(event)">
+            <div class="form-group">
+              <div class="input-group">
+                <input
+                  id="newTodo"
+                  type="text"
+                  class="form-control text-light"
+                  aria-label="Text input with checkbox"
+                  placeholder="Add new item..."
+                  required
+                  style="background-color: rgba(255, 255, 255, 0.26);"
+                />
+                <div class="input-group-append">
+                  <button
+                    class="btn btn-outline-light"
+                    type="submit"
+                    id="addTodo"
+                    style="background-color: rgba(255, 255, 255, 0.26);"
+                  >
+                    Add Todo
+                  </button>
                 </div>
               </div>
-            </form>
-
-            <div id="todos"></div>
-          </div>
+            </div>
+          </form>
+          <div
+            id="todos"
+            class="list-container px-3 rounded-lg"
+            style="background-color: rgba(255, 255, 255, 0.26);"
+          ></div>
         </div>
       </div>
     </footer>

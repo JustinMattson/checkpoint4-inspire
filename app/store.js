@@ -9,13 +9,10 @@ let _state = {
   todos: [], //TODO change 'any' to your todo model
   /** @type {Boolean} */
   clock: true, //millitary time
+  visible: false, // user defined todo list
   /** @type {integer}*/
   time: null,
   date: null,
-  /** @type {integer}*/
-  sunrise: 0,
-  /** @type {integer}*/
-  sunset: 0,
   /** @type {String}*/
   greeting: "",
   /** @type {Quote[]} */
@@ -31,10 +28,9 @@ let _listeners = {
   weather: [],
   todos: [],
   clock: [],
+  visible: [],
   time: [],
   date: [],
-  sunrise: [],
-  sunset: [],
   greeting: [],
   quote: [],
   image: [],

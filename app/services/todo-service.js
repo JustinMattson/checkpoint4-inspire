@@ -8,6 +8,12 @@ const todoApi = axios.create({
 });
 
 class TodoService {
+  toggleVisible() {
+    store.State.visible
+      ? (store.State.visible = false)
+      : (store.State.visible = true);
+    store.commit("visible", store.State.visible);
+  }
   async getTodos() {
     try {
       let res = await todoApi.get();
@@ -44,7 +50,6 @@ class TodoService {
         ? (todoObj.completed = false)
         : (todoObj.completed = true);
       //console.log(todoObj.completed + "after ternary");
-
       todoApi.put(todoId, { completed: todoObj.completed }).then((res) => {
         this.getTodos();
       });

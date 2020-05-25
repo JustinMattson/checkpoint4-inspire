@@ -3,22 +3,36 @@ import store from "../store.js";
 
 //TODO Create the render function
 function _drawTodos() {
+  let alias = document.getElementById("todos");
   let todos = store.State.todos;
+  let visible = store.State.visible;
+  visible ? alias.classList.remove("hidden") : alias.classList.add("hidden");
   console.log(store.State);
   console.log("^store.State from todoController");
 
   let template = "";
   todos.forEach((todo) => (template += todo.Template));
-  document.getElementById("todos").innerHTML = template;
+  alias.innerHTML = template;
+
+  document.getElementById("todoCounts").innerText =
+    "(" +
+    store.State.todos.filter((t) => t.completed == true).length +
+    "/" +
+    store.State.todos.length +
+    ")";
 }
 
 export default class TodoController {
   constructor() {
     //NOTE DONE Remember to register your subscribers
     store.subscribe("todos", _drawTodos);
+    store.subscribe("visible", _drawTodos);
     TodoService.getTodos();
   }
 
+  toggleVisible() {
+    TodoService.toggleVisible();
+  }
   addTodo(e) {
     e.preventDefault();
     var form = e.target;

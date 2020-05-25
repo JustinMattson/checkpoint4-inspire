@@ -29,7 +29,7 @@ export default class Todo {
     }
     return /*html*/ `
     <div class="col-1 text-center">
-      <i class="fas fa-flag-checkered action" onclick="app.todoController.toggleTodoStatus('${this.id}')"></i>
+      <i class="fas fa-flag-checkered text-danger action" onclick="app.todoController.toggleTodoStatus('${this.id}')"></i>
     </div>
     <div class="col-10" style="text-decoration:line-through;">
       ${this.description}

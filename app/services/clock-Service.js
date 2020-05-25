@@ -39,17 +39,16 @@ function getDate() {
 }
 
 function getGreeting() {
-  let greeting = "";
-  let d = new Date();
-  let now = 0.001 * d.getTime();
+  var greeting = "";
+  var d = new Date();
+  var now = 0.001 * d.getTime();
   //console.log(now) + " = now";
-  let sunrise = store.State.sunrise;
+  var sunrise = store.State.weather.sunrise;
   //console.log(sunrise + " = sunrise");
-  let sunset = store.State.sunset;
+  var sunset = store.State.weather.sunset;
   //console.log(sunset + " = sunset");
   if (now < sunrise || now > sunset) {
     greeting = "...Good Night...";
-    weatherService.getWeather();
   } else if (d.getHours() < 12) {
     greeting = "Good Morning!";
   } else if (d.getHours() < 17 || (d.getHours() == 17 && d.getMinutes() <= 1)) {
@@ -70,7 +69,6 @@ class ClockService {
     getDate();
     getTime();
     getGreeting();
-    //console.log("called getGreeting");
   }
   toggleMilitaryTime() {
     store.State.clock
