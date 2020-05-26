@@ -31,6 +31,7 @@ export default class Clock {
   constructor() {
     store.subscribe("clock", _drawClock);
     store.subscribe("time", _drawClock);
+    clockService.startTime();
     store.subscribe("date", _drawDate);
     store.subscribe("greeting", _drawGreeting);
   }

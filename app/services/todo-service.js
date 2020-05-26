@@ -46,12 +46,14 @@ class TodoService {
     if (todoObj) {
       //		and if you did find one
       //		change its completed status to whatever it is not (ex: false => true or true => false)
-      todoObj.completed
-        ? (todoObj.completed = false)
-        : (todoObj.completed = true);
+      todoObj.completed = !todoObj.completed;
+      // todoObj.completed
+      //   ? (todoObj.completed = false)
+      //   : (todoObj.completed = true);
       //console.log(todoObj.completed + "after ternary");
       todoApi.put(todoId, { completed: todoObj.completed }).then((res) => {
-        this.getTodos();
+        //this.getTodos();
+        store.commit("todos", store.State.todos);
       });
     }
     //todoApi.put(todoId, todo);

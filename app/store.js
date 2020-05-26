@@ -4,7 +4,7 @@ import Quote from "./models/quote.js";
 
 let _state = {
   /**@type {Weather} */
-  weather: new Weather({ name: "loading", main: { temp: 0.0 } }), //temporary fake data
+  weather: null, //temporary fake data
   /** @type {Todo[]}*/
   todos: [], //TODO change 'any' to your todo model - is this documentation doing anything?
   /** @type {Boolean} */
@@ -16,8 +16,8 @@ let _state = {
   /** @type {String}*/
   greeting: "",
   userData: "",
-  /** @type {Quote[]} */
-  quote: [],
+  /** @type {Quote} */
+  quote: null,
   /** @type {String} */
   image: null,
 };

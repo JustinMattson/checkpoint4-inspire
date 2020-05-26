@@ -18,8 +18,8 @@ function getTime() {
       hours = 12;
     }
     // NOTE DONE verify minutes have two digits : minutes < 10
-    // TODO if getTime is called at load and every 1 seconds thereafter
-    // why does it take 1 seconds to render the clock on the DOM?
+    // REVIEW if getTime is called at load and every 1 second thereafter
+    // why does it take 1 second to render the clock on the DOM?
     store.commit("time", { hours: hours, minutes: minutes, ampm: ampm });
     return hours + ":" + minutes;
   } else {
@@ -71,9 +71,12 @@ function getGreeting() {
 class ClockService {
   constructor() {
     getDate();
-    getTime();
     getGreeting();
   }
+  startTime() {
+    getTime();
+  }
+
   toggleMilitaryTime() {
     store.State.clock
       ? (store.State.clock = false)

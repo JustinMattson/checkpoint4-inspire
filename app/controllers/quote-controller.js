@@ -1,7 +1,7 @@
 import QuoteService from "../services/quote-service.js";
 import store from "../store.js";
 
-// TODO Ask why Template is angry.
+// NOTE: DONE Ask why Template is angry.
 function _drawQuote() {
   let quote = store.State.quote;
   document.getElementById("quote").innerHTML = quote.Template;
