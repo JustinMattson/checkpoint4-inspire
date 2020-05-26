@@ -69,12 +69,15 @@ function getGreeting() {
 // Night is from sunset to sunrise
 
 class ClockService {
-  constructor() {
-    getDate();
-    getGreeting();
-  }
+  constructor() {}
   startTime() {
     getTime();
+  }
+  startDate() {
+    getDate();
+  }
+  startGreeting() {
+    getGreeting();
   }
 
   toggleMilitaryTime() {

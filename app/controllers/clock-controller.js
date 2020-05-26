@@ -33,7 +33,9 @@ export default class Clock {
     store.subscribe("time", _drawClock);
     clockService.startTime();
     store.subscribe("date", _drawDate);
+    clockService.startDate();
     store.subscribe("greeting", _drawGreeting);
+    clockService.startGreeting();
   }
 
   toggleMilitaryTime() {
