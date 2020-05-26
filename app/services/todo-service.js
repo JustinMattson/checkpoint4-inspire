@@ -27,7 +27,7 @@ class TodoService {
     //NOTE DONE Handle this response from the server
     // added try/catch if that is what the TO-DO was about?
   }
-
+  // POST
   addTodoAsync(todoObj) {
     let todo = new Todo(todoObj);
     todoApi
@@ -38,7 +38,7 @@ class TodoService {
       .catch((e) => console.error(e));
     //NOTE done? Handle this response from the server (hint: what data comes back, do you want this?)
   }
-
+  // PUT
   toggleTodoStatusAsync(todoId) {
     let todoObj = store.State.todos.find((todo) => todo.id == todoId);
     //console.log(todoObj.completed + "before ternary");
@@ -54,13 +54,13 @@ class TodoService {
         this.getTodos();
       });
     }
-
     //todoApi.put(todoId, todo);
     //TODO do you care about this data? or should you go get something else?
+    // What does this todo mean? ~jm
   }
 
   removeTodoAsync(todoId) {
-    //TODO Work through this one on your own
+    //NOTE DONE Work through this one on your own
     //		what is the request type
     //		once the response comes back, what do you need to insure happens?
     todoApi

@@ -1,7 +1,7 @@
 import TodoService from "../services/todo-service.js";
 import store from "../store.js";
 
-//TODO Create the render function
+//NOTE DONE Create the render function
 function _drawTodos() {
   let alias = document.getElementById("todos");
   let todos = store.State.todos;

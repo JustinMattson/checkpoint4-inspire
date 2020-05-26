@@ -7,21 +7,25 @@ const _quoteApi = axios.create({
   timeout: 3000,
 });
 
-//TODO create methods to retrieve data trigger the update window when it is complete
+//NOTE DONE create methods to retrieve data trigger the update window when it is complete
 class QuoteService {
   async getQuote() {
-    let res = await _quoteApi.get();
-    let quoteObj = res.data.quote;
-    let quote = quoteObj.body;
-    let author = quoteObj.author;
-    if (quote == null || author == null) {
-      this.getQuote();
+    try {
+      let res = await _quoteApi.get();
+      let quoteObj = res.data.quote;
+      let quote = quoteObj.body;
+      let author = quoteObj.author;
+      if (quote == null || author == null) {
+        this.getQuote();
+      }
+      let myQuoteObj = {
+        quote: quote,
+        author: author,
+      };
+      store.commit("quote", new Quote(myQuoteObj));
+    } catch (e) {
+      console.log(e + "error in getting quote from _quoteApi");
     }
-    let myQuoteObj = {
-      quote: quote,
-      author: author,
-    };
-    store.commit("quote", new Quote(myQuoteObj));
   }
 }
 

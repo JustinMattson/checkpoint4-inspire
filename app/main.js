@@ -5,7 +5,9 @@ import WeatherController from "./controllers/weather-controller.js";
 import ClockController from "./controllers/clock-controller.js";
 import ImageController from "./controllers/image-controller.js";
 
-//TODO Dont forget to register all your controllers
+//NOTE DONE Dont forget to register all your controllers
+// The Clock Controller and Clock Service were bonus
+// Model not utilized.
 class App {
   constructor() {
     //this.imageController = new ImageController();

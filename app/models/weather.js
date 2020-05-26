@@ -18,7 +18,7 @@ export default class Weather {
     this.sunset = data.sunset;
     this.unit = false;
   }
-  // TODO set up a toggle for K F C!
+  // NOTE DONE set up a toggle for K F C!
   get Template() {
     return /*html*/ `
      <div class="action" onclick="app.weatherController.toggleTempUnit()">

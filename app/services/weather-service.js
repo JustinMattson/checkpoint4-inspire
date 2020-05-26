@@ -31,7 +31,6 @@ class WeatherService {
       // TODO ask why I couldn't just pull this out of the res.data in the Model!
       let sunrise = weatherObj.sys.sunrise;
       let sunset = weatherObj.sys.sunset;
-
       let myWeatherObj = {
         city: city,
         temperature: temperature,

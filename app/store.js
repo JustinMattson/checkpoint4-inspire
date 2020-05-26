@@ -6,11 +6,11 @@ let _state = {
   /**@type {Weather} */
   weather: new Weather({ name: "loading", main: { temp: 0.0 } }), //temporary fake data
   /** @type {Todo[]}*/
-  todos: [], //TODO change 'any' to your todo model
+  todos: [], //TODO change 'any' to your todo model - is this documentation doing anything?
   /** @type {Boolean} */
   clock: true, //millitary time
   visible: false, // user defined todo list
-  /** @type {object*/
+  /** @type {object}*/
   time: {},
   date: null,
   /** @type {String}*/
@@ -18,7 +18,7 @@ let _state = {
   userData: "",
   /** @type {Quote[]} */
   quote: [],
-  /** @type {} */
+  /** @type {String} */
   image: null,
 };
 
