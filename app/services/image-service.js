@@ -16,7 +16,9 @@ class ImageService {
       let imgUrl = res.data.large_url;
       let copyright = res.data.copyright;
       let site = res.data.site;
-      if (imgUrl.slice(-3) != "jpg" || imgUrl == null) {
+      debugger;
+      // imgUrl.slice(-3) != "jpg" ||
+      if (imgUrl == null) {
         console.log("not jpg or isNull");
         id = 0;
         imgUrl = "./assets/img/IMAG1868~2.jpg";

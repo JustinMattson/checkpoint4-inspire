@@ -3,9 +3,10 @@ import store from "../store.js";
 
 function _drawImage() {
   try {
-    let image = store.State.image;
+    let imageObj = store.State.image;
     //console.log(image.imgUrl);
-    let imgUrl = image.imgUrl;
+    // @ts-ignore
+    let imgUrl = imageObj.imgUrl;
     document.getElementById("bg-image").style.backgroundImage = `${imgUrl}`;
   } catch (error) {
     //console.log("error caught by image controller");
